@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caixa de Scripts do studiolite1</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5dc; /* bege claro */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      background-color: #f5f5dc;
+      width: 100%;
+      max-width: 800px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    header svg {
+      width: 48px;
+      height: 48px;
+      fill: #FF0000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      color: #333;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 10px 0;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #scripts {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 800px;
+      padding: 1rem;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .script-item {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+    }
+
+    #voltar {
+      align-self: center;
+      background-color: #555;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 15l5.19-3L10 9v6z" />
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 12c0-1.05-.04-2.09-.12-3.11-.09-1.28-.38-2.41-1.36-3.39-.98-.98-2.11-1.27-3.39-1.36C14.09 4.04 13.05 4 12 4s-2.09.04-3.11.12c-1.28.09-2.41.38-3.39 1.36-.98.98-1.27 2.11-1.36 3.39-.08 1.02-.12 2.06-.12 3.11s.04 2.09.12 3.11c.09 1.28.38 2.41 1.36 3.39.98.98 2.11 1.27 3.39 1.36 1.02.08 2.06.12 3.11.12s2.09-.04 3.11-.12c1.28-.09 2.41-.38 3.39-1.36.98-.98 1.27-2.11 1.36-3.39.08-1.02.12-2.06.12-3.11zM7.5 15.5v-7l6 3.5-6 3.5z"/>
+    </svg>
+    <h1>Studio lite</h1>
+  </header>
+
+  <button id="btnAcessar" onclick="mostrarScripts()">Acessar Scripts</button>
+
+  <div id="scripts">
+    <button id="voltar" onclick="voltarInicio()">Voltar ao Início</button>
+
+    <div class="script-item">
+      <h3>Script 1</h3>
+      <pre>// Código do primeiro vídeo
+console.log('Hello World');</pre>
+    </div>
+    <div class="script-item">
+      <h3>Script 2</h3>
+      <pre>// Código do segundo vídeo
+function soma(a, b) {
+  return a + b;
+}</pre>
+    </div>
+    <!-- Adicione mais scripts aqui -->
+  </div>
+
+  <script>
+    function mostrarScripts() {
+      document.getElementById('scripts').style.display = 'flex';
+      document.getElementById('btnAcessar').style.display = 'none';
+      window.scrollTo({ top: document.getElementById('scripts').offsetTop, behavior: 'smooth' });
+    }
+
+    function voltarInicio() {
+      document.getElementById('scripts').style.display = 'none';
+      document.getElementById('btnAcessar').style.display = 'inline-block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
